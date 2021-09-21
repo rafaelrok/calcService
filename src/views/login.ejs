@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/styles/pages/login.css">
+    <!-- Sweet Alert JavaScript -->
+    <script src="/scripts/sweetalert2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>   
+    <script src="/scripts/login.js"></script>
+    <!-- LOGIN -->
+        <div class="login">
+            <div class="wrap">
+                <!-- TOGGLE -->
+                <div id="toggle-wrap">
+                    <div id="toggle-terms">
+                        <div id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- TERMOS -->
+                <div class="terms">
+                    <h2>Termo de utilização JobsCalc</h2>
+                    <p class="small">Última modificação: 18 de abril de 2021</p>
+                    <h3>Bem vindo ao JobsCalc</h3>
+                    <p>Ao usar nossos Sistema, você está concordando com estes termos. Por favor, leia-os com cuidado.</p>                  
+                </div>
+
+                <!-- RECUPERAÇÂO -->
+                <div class="recovery">
+                    <h2>Recuperar Senha</h2>
+                    <p>Digite o <strong>endereço de email</strong> ou <strong>usuário</strong> da conta e <strong>clique em enviar</strong></p>
+                    <p>Enviaremos instruções por e-mail sobre como redefinir sua senha.</p>
+                    <form class="recovery-form" action="" method="post">
+                        <input type="text" class="input" id="user_recover" placeholder="Digite e-mail ou nome de usuário aqui">
+                        <input type="submit" class="button" value="Enviar">
+                    </form>
+                    <p class="mssg">Um e-mail foi enviado para você com mais instruções.</p>
+                </div>
+
+                <!-- SLIDER -->
+                <div class="content">
+                    <!-- LOGO -->
+                    <div class="logo">
+                        <a href="#"><img src="/images/favicon.png" alt=""></a>
+                    </div>
+                    <!-- SLIDESHOW -->
+                    <div id="slideshow">
+                        <div class="one">
+                            <h2><span>RECURSOS</span></h2>
+                            <p>Cadastre-se e desfrute do melhores recurso gratuitos para colcular seu serviços</p>
+                        </div>
+                        <div class="two">
+                            <h2><span>TEMPO</span></h2>
+                            <p>Valorize seu tempo calculando da melhor forma.</p>
+                        </div>
+                        <div class="three">
+                            <h2><span>GRUPOS</span></h2>
+                            <p>Cadastre seu serviços seja como freelancers, ou distribua seus projetos e calcule seus rendimento.</p>
+                        </div>
+                        <div class="four">
+                            <h2><span>JOBS</span></h2>
+                            <p>Desfrute de uma trilha melhor de seus negocios.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- LOGIN FORMULARIO -->
+                <div class="user">
+                    <!-- ACTIONS
+                    <div class="actions">
+                        <a class="help" href="#signup-tab-content">Sign Up</a><a class="faq" href="#login-tab-content">Login</a>
+                    </div>
+                    -->
+                    <div class="form-wrap">
+                        <!-- TABS -->
+                    	<div class="tabs">
+                            <h3 class="login-tab"><a class="log-in active" href="#login-tab-content"><span>Login<span></a></h3>
+                    		<h3 class="signup-tab"><a class="sign-up" href="#signup-tab-content"><span>Registro</span></a></h3>
+                    	</div>
+                        <!-- TABS CONTENT -->
+                    	<div class="tabs-content">
+                            <!-- TABS LOGIN -->
+                    		<div id="login-tab-content" class="active">
+                    			<form class="login-form" action="" method="post">
+                    				<input type="text" class="input" id="userSIEmail" onblur="checkUserSIEmail()" placeholder="Email">
+                                    <small id="userSIEmailError" class="form-text text-danger">Please check your login information.</small>
+                    				<input type="password" class="input" id="userSIPassword" onblur="checkUserSIPassword()" placeholder="Senha">
+                                    <small id="userSIPasswordError" class="form-text text-danger">Please check your password.</small>
+                    				<input type="checkbox" class="checkbox" checked id="remember_me">
+                    				<label for="remember_me">Lembra email/senha</label>
+                    				<input type="submit" class="button" value="Login" id="signIn">
+                                    <!--<button type="button" class="button" onclick="javascript:signIn()">Entrar</button>-->
+                    			</form>
+                    			<div class="help-action">
+                    				<p><i class="fa fa-arrow-left" aria-hidden="true"></i><a class="forgot" href="#">Esqueceu sua senha?</a></p>
+                    			</div>
+                    		</div>
+                            <!-- TABS REGISTRO -->
+                    		<div id="signup-tab-content">
+                    			<form class="signup-form" action="" method="post">
+                    				<input type="text" class="input" id="userFullName" onblur="checkUserFullName()" placeholder="Nome">
+                                    <small id="userFullNameError" class="form-text text-danger">This Field must be filled.</small>
+                                    <input type="text" class="input" id="userSurname" onblur="checkUserSurname()" placeholder="Sobrenome">
+                                    <small id="userSurnameError" class="form-text text-danger">This Field must be filled.</small>
+                                    <input type="email" class="input" id="userEmail" onblur="checkUserEmail()" placeholder="Email">
+                                    <small id="userEmailError" class="form-text text-danger">Please check your email address.</small>
+                    				<input type="password" class="input" id="userPassword" onblur="checkUserPassword()" placeholder="Senha">
+                                    <small id="userPasswordError" class="form-text text-danger">Your password must be uppercase, lowercase and more than 10 characters.</small>
+                    				<!--<input type="submit" class="button" onclick="signUp()" value="Registrar">-->
+                                    <button type="button" class="button" onclick="signUp()">Registrar</button>
+                    			</form>
+                    			<div class="help-action">
+                    				<p>Ao se inscrever, você concorda com o nosso</p>
+                    				<p><i class="fa fa-arrow-left" aria-hidden="true"></i><a class="agree" href="#">Termo de utilização</a></p>
+                    			</div>
+                    		</div>
+                    	</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+    
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+            crossorigin="anonymous"></script>
+
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+            crossorigin="anonymous"></script>
+
+                <!-- Firebase -->
+                
+            <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+            <!-- Add Firebase products that you want to use -->
+            <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+            <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+            <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBVW3UDRzXtqW1fluH7XFmc5WReLgWrkmc",
+                authDomain: "stti-jobscalc.firebaseapp.com",
+                databaseURL: "https://stti-jobscalc.firebaseio.com",
+                projectId: "stti-jobscalc",
+                storageBucket: "stti-jobscalc.appspot.com",
+                messagingSenderId: "643208859281",
+                appId: "1:643208859281:web:3bbc6a6f1a36d99e5c3930",
+                measurementId: "G-84QYKFK6CQ"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            </script>
+                
+                <!-- Custom JavaScript -->
+                <script src="/scripts/app.js"></script>
+
+</body>
+</html>
